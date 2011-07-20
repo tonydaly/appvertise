@@ -88,11 +88,15 @@
       
       // Swap content of app-slides
       box.find(".app-slide1").html(box.find("." + from_slide).children().eq(0).clone());
-      // box.find(".app-slide1").show();
-      
       box.find(".app-slide2").html(box.find("." + to_slide).children().eq(0).clone());
-      // box.find(".app-slide2").hide();
-      // startRotate();
+      
+      var nav_list = box.find(".navigation ul");
+      var nav_last_slide = nav_list.children().last();
+      // Remove the last element from the list
+      nav_list.children().last().remove();
+      // Put it back on the top
+      nav_list.prepend(nav_last_slide);
+
       slideTopSlidesAnimation();
     }
     

@@ -1,0 +1,61 @@
+.appvertise-wrapper {
+  display: none;
+}
+
+.appvertise-wrapper, .appbox {
+  width: 950px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.appbox .app-slide1, .app-slide2 {
+  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.appbox .navigation {
+  float: right;
+}
+
+.appbox ul.slides{
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.appbox ul.slides li{
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 600px;
+	height: 300px;
+}
+
+.appvertise-wrapper .navigation ul{
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+/*  padding: 2px 0px 0px 0px;*/
+}
+.appvertise-wrapper .navigation li{
+	list-style: none;
+	list-style-type: none;
+	margin: 0px 0px;
+  height: 100px;
+}
+.appvertise-wrapper .navigation li img{
+/*  border: solid 2px #000;*/
+}
+.appvertise-wrapper .navigation li.hover img{
+/*  border: solid 2px #414141;*/
+}
+.appvertise-wrapper .navigation li.active img{
+/*  border: solid 2px #FFF;*/
+}

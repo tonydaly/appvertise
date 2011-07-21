@@ -58,7 +58,7 @@
     
     // TODO move the rotateInterval into a setting
     function startRotate() {
-      rotator = setInterval(rotate, 2000)
+      rotator = setInterval(rotate, 6000)
     }
     
     function stopRotate() {

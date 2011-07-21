@@ -1,8 +1,3 @@
-/**
- *
- *  TODO: Option for rounded corners
- */
-
 (function($) {
   $.fn.appvertise = function(custom) {
     var defaults = {
@@ -36,9 +31,6 @@
     });
     
     // Set images
-    // if (!$.browser.msie) {
-    //   box.find("ul").find("embed").attr("wmode", "transparent");
-    // };
     box.find(".app-slide1").html(box.find("." + current_slide).children().eq(0).clone());
     
     // Navigation
@@ -50,7 +42,6 @@
     
     var navigation_box = box.find(".navigation");
     navigation_box.html(navigation);
-    
     
     box.show();
     
@@ -67,7 +58,7 @@
     
     function rotate() {
       // what's our next slide number? If we're over the slide count, cycle back around.
-      var next_slide_number = (current_slide_number + 1) > slide_count ? 1 : (current_slide_number +1);
+      var next_slide_number = (current_slide_number + 1) > slide_count ? 1 : (current_slide_number + 1);
       
       // transition to that slide!      
       transition(current_slide_number, next_slide_number);

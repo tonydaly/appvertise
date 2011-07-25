@@ -3,7 +3,9 @@
     var defaults = {
       width: 950,
       height: 300,
-      slideSpeed: 6000
+      rotateInterval: 6000,
+      slideAnimation: "top",
+      slideSpeed: "slow"
     };
     var settings  = $.extend({}, defaults, custom);
     
@@ -50,7 +52,7 @@
     
     // TODO move the rotateInterval into a setting
     function startRotate() {
-      rotator = setInterval(rotate, settings.slideSpeed)
+      rotator = setInterval(rotate, settings.rotateInterval)
     }
     
     function stopRotate() {
@@ -88,14 +90,45 @@
       nav_list.children().last().remove();
       // Put it back on the top
       nav_list.prepend(nav_last_slide);
-
-      slideTopSlidesAnimation();
+      
+      switch(settings.slideAnimation) {
+        case "top":
+          slideTopSlidesAnimation();
+          break;
+        case "bottom":
+          slideBottomSlidesAnimation();
+          break;
+        case "left":
+          slideLeftSlidesAnimation();
+          break;
+        case "right":
+          slideRightSlidesAnimation();
+          break;
+      }
     }
     
     function slideTopSlidesAnimation() {
 			box.find(".app-slide2").css("top", -settings.height);
 			box.find(".app-slide2").show();
-			box.find(".app-slide2").animate({ top : "0px" }, 'slow', null, startRotate);
+			box.find(".app-slide2").animate({ top : "0px" }, settings.slideSpeed, null, startRotate);
+		}
+		
+		function slideBottomSlidesAnimation(){
+			box.find(".app-slide2").css("top", settings.height);
+			box.find(".app-slide2").show();
+			box.find(".app-slide2").animate({ top : "0px" }, settings.slideSpeed, null, startRotate);
+		}
+		
+		function slideLeftSlidesAnimation(){
+			box.find(".app-slide2").css("left", -settings.width);
+			box.find(".app-slide2").show();
+			box.find(".app-slide2").animate({ left : "0px" }, settings.slideSpeed, null, startRotate);
+		}
+		
+		function slideRightSlidesAnimation(){
+			box.find(".app-slide2").css("left", settings.width);
+			box.find(".app-slide2").show();
+			box.find(".app-slide2").animate({ left : "0px" }, settings.slideSpeed, null, startRotate);
 		}
     
   }

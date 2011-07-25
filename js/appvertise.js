@@ -2,7 +2,8 @@
   $.fn.appvertise = function(custom) {
     var defaults = {
       width: 950,
-      height: 300
+      height: 300,
+      slideSpeed: 6000
     };
     var settings  = $.extend({}, defaults, custom);
     
@@ -49,7 +50,7 @@
     
     // TODO move the rotateInterval into a setting
     function startRotate() {
-      rotator = setInterval(rotate, 6000)
+      rotator = setInterval(rotate, settings.slideSpeed)
     }
     
     function stopRotate() {
